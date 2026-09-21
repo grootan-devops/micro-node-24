@@ -1,0 +1,16 @@
+# Changelog
+
+All notable changes to this project are documented here.
+
+The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+and this project follows [Semantic Versioning](https://semver.org/).
+
+## [Unreleased]
+
+## [1.0.0] - 2026-09-22
+
+### Added
+
+- Initial Node.js 24.18.0 Buildah image with npm 12.0.1 and Yarn 1.22.22,
+  based on micro-root 1.5.1.
+- GitHub Actions build, smoke-test, security-scan, and release workflows.
