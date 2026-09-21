@@ -1,10 +1,9 @@
 name: CI · Pull Request
+run-name: "CI · ${{ github.event_name }} · ${{ github.sha }}"
 
 on:
   pull_request:
     branches: [main]
-
-run-name: "CI · ${{ github.event_name }} · ${{ github.sha }}"
 
 concurrency:
   group: pr-${{ github.repository }}-${{ github.event.pull_request.number }}
