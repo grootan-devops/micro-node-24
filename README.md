@@ -6,12 +6,9 @@ micro-root image. The project intentionally contains no Dockerfile.
 ## Image
 
 - Registry: Docker Hub
-- Repository: `grootantec/micro-node-24`
-- Release: `1.0.0`
-- Node.js: `24.18.0`
-- npm: `12.0.1`
-- Yarn: `1.22.22`
-- Base: `grootantec/micro-root:1.5.1`
+- Repository: `grootantech/micro-node-24`
+- Node.js: `24`
+- Base: `grootantech/micro-root`
 
 The image uses `/usr/bin/dumb-init --` as its entrypoint and starts `node` by
 default. `NODE_HOME` is `/usr/local/node`, and the Node.js, npm, npx, Yarn, and
