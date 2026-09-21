@@ -53,8 +53,8 @@ run_in_container_mount "
     package_archive=\$(npm pack --silent --pack-destination /tmp \${package_spec})
     rm -rf '${NODE_HOME}/lib/node_modules/npm/node_modules/'\${package_name}
     mkdir -p '${NODE_HOME}/lib/node_modules/npm/node_modules/'\${package_name}
-    tar -xzf '/tmp/'\${package_archive} --strip-components=1 \
-      -C '${NODE_HOME}/lib/node_modules/npm/node_modules/'\${package_name}
+    node -e \"require('${NODE_HOME}/lib/node_modules/tar').x({file: '/tmp/' + process.argv[1], cwd: process.argv[2], strip: 1}).catch((error) => { console.error(error); process.exit(1); })\" \
+      \"\${package_archive}\" '${NODE_HOME}/lib/node_modules/npm/node_modules/'\${package_name}
     rm -f '/tmp/'\${package_archive}
   done
   ln -sf '${NODE_HOME}/bin/yarn' '/usr/bin/yarn'
