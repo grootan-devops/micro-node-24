@@ -12,7 +12,7 @@ fail() {
 [[ "${NODE_HOME}" == "/usr/local/node" ]] || fail "unexpected NODE_HOME"
 test -x "${NODE_HOME}/bin/node" || fail "Node.js binary is missing"
 node --version | grep -q '^v24\.18\.0$' || fail "unexpected Node.js version"
-npm --version | grep -q '^12\.0\.1$' || fail "unexpected npm version"
+npm --version | grep -q '^12\.0\.2$' || fail "unexpected npm version"
 npx --version >/dev/null
 yarn --version | grep -q '^1\.22\.22$' || fail "unexpected Yarn version"
 yarnpkg --version | grep -q '^1\.22\.22$' || fail "unexpected yarnpkg version"
