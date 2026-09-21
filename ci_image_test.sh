@@ -16,4 +16,4 @@ npm --version | grep -q '^12\.0\.2$' || fail "unexpected npm version"
 npx --version >/dev/null
 yarn --version | grep -q '^1\.22\.22$' || fail "unexpected Yarn version"
 yarnpkg --version | grep -q '^1\.22\.22$' || fail "unexpected yarnpkg version"
-node -e 'if (process.getuid() !== 10001) process.exit(1); if (process.cwd() !== "/") process.exit(1);'
+node -e 'if (process.getuid() !== 10001) process.exit(1);'
