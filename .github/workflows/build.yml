@@ -1,6 +1,6 @@
 name: Build · Manual Image Verification
 
-"on":
+on:
   workflow_dispatch:
 
 run-name: "CI · ${{ github.event_name }} · ${{ github.sha }}"
@@ -46,8 +46,8 @@ jobs:
       base-image-repo: registry-1.docker.io/grootantech/micro-root
       # renovate: datasource=gitlab-tags depName=devops/container-image/base/micro-root
       base-image-tag: "1.0.0"
-      install-packages: "libstdc++"
-      required-packages: "libstdc++"
+      install-packages: "grep libstdc++"
+      required-packages: "grep libstdc++"
       container-path-env: "/usr/local/node/bin"
       container-entrypoint: '["/usr/bin/dumb-init", "--"]'
       container-cmd: '["node"]'
