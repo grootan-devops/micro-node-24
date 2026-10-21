@@ -7,6 +7,14 @@ and this project follows [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [1.2.0] - 2026-10-22
+
+### Changed
+
+- Updated CI library to `1.6.0`
+- Moved image test to ci library
+- Accepted CVE-2026-19534, CVE-2026-85024, CVE-2026-18540 (undici) and CVE-2026-104844 (postcss-selector-parser) in `ignored-cves.yml`: all are in the npm CLI's vendored dependencies and are not reachable from application code; drop them once the bundled npm ships the patched versions.
+
 ## [1.1.1] - 2026-09-23
 
 ### Changed
