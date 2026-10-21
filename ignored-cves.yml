@@ -1,12 +1,3 @@
-# Trivy suppressions for the Node.js 24 micro base image.
-#
-# Every entry below is in a dependency vendored inside the npm CLI that ships
-# with Node.js (/usr/local/node/lib/node_modules/npm/node_modules/...). These
-# copies are loaded only while the npm command itself runs. They are not
-# Node.js's built-in undici/fetch and are not on an application's require
-# path. They are accepted until a Node.js/npm release bundles the patched
-# versions; the scan fails on a stale entry, so drop each one when the
-# upgraded npm lands.
 image:
   - id: "CVE-2026-19534"
     reason: "undici 6.28.0 vendored by the npm CLI (patched in 6.28.1). The DoS needs a WebSocket server to answer with an unrequested subprotocol; npm only makes HTTPS requests to the configured registry and never opens WebSockets, and applications use Node.js's built-in undici, not this copy. Accepted until the bundled npm ships undici >= 6.28.1."
